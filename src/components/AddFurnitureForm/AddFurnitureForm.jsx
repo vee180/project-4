@@ -33,37 +33,47 @@ export default function AddFurnitureForm({handleAddPost}){
 	}
 
 	return (
-		<Segment>
-			<Form onSubmit={handleSubmit}>
-				<Form.Input 
-					placeholder='Name'
-					required
-					name="name"
-                    onChange={handleChange}
-                    
-				/>
-				
-				<Form.Input
-                placeholder="Product Details"
-				name="productDetails"
-				onChange={handleChange}
-				 />
-				 <Form.Input
-                placeholder="Color"
-				name="color"
-				onChange={handleChange} />
-				 <Form.Input
-                placeholder="Eco-Friendly"
-				name="eco-friendly"
-				onChange={handleChange} />
-				<Form.Input 
-					type='file'
-					
-					placeholder="upload image"
-					onChange={handleFileInput}
-				/>
-            <Button type="submit">Add Furniture</Button>
-			</Form>
-		</Segment>
+		
+		<div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', backgroundColor: '#F2F2F2'}}>
+  <Segment style={{width: '50%', backgroundColor: '#F7EDE2', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'}}>
+    <Form onSubmit={handleSubmit} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '40px'}}>
+      <Form.Input 
+        placeholder='Name'
+        required
+        name="name"
+        onChange={handleChange}
+        style={{backgroundColor: '#FFF8E8', marginBottom: '20px', width: '600px'}}
+      />
+      <Form.Input
+        placeholder="Product Details"
+        name="productDetails"
+        onChange={handleChange}
+        style={{backgroundColor: '#FFF8E8', marginBottom: '20px', width: '600px'}}
+      />
+      <Form.Input
+        placeholder="Color"
+        name="color"
+        onChange={handleChange}
+        style={{backgroundColor: '#FFF8E8', marginBottom: '20px', width: '600px'}}
+      />
+      <Form.Input
+        placeholder="Eco-Friendly"
+        name="eco-friendly"
+        onChange={handleChange}
+        style={{backgroundColor: '#FFF8E8', marginBottom: '20px', width: '600px'}}
+      />
+      <Form.Input 
+        type='file'
+        placeholder="upload image"
+        onChange={handleFileInput}
+        style={{backgroundColor: '#FFF8E8', marginBottom: '20px', width: '600px'}}
+		/>
+		
+      
+      <Button type="submit" style={{backgroundColor: '#6B2737', color: '#FFF', width: '80%', marginTop: '20px', borderRadius: '5px'}}>Add Furniture</Button>
+    </Form>
+  </Segment>
+</div>
+
 	)
 }

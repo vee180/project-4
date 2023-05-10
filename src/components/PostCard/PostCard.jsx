@@ -1,7 +1,8 @@
 import { Card, Icon, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import 'semantic-ui-css/semantic.min.css';
 
-function PostCard({ post, isProfile, removeLike, addLike, loggedUser }) {
+function PostCard({ post, isProfile, removeLike, addLike, loggedUser,removePost }) {
   console.log(loggedUser);
   // is the loggedUser username in the the post.likes array
   // if it is, that means the user has liked the Post
@@ -62,7 +63,14 @@ function PostCard({ post, isProfile, removeLike, addLike, loggedUser }) {
           onClick={clickHandler}
         />
         {post.likes.length} Likes
+        <Icon
+          name={"delete"}
+          size="large"
+          color={likeColor}
+          onClick={() => removePost(post._id)}
+        />
       </Card.Content>
+      
     </Card>
   );
 }

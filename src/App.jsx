@@ -8,6 +8,7 @@ import SignupPage from './pages/SignupPage/SignupPage'
 import FeedPage from './pages/FeedPage/FeedPage';
 import MainPage from './pages/MainPage/MainPage';
 import AddFurniture from './pages/AddFurniture/AddFurniture';
+import RoomPalette from './pages/RoomPalette/RoomPalette';
 
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
@@ -52,6 +53,10 @@ function App() {
         <Route
           path="/addfurniture"
           element={<AddFurniture loggedUser={user} handleLogout={handleLogout} />}
+        />
+        <Route
+          path="/roompalette"
+          element={<RoomPalette loggedUser={user} handleLogout={handleLogout} />}
         />
         <Route
           path="/login"

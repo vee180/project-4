@@ -69,6 +69,19 @@ export default function FeedPage({loggedUser, handleLogout}) {
 	}
   }
 
+
+  async function removePost(postId){
+    try{
+      const data = await postsApi.deletePost(postId);
+      getPosts()
+    }catch(err){
+      console.log(err, ' err in remove Like')
+    }
+  }
+
+
+
+
   useEffect(() => {
     getPosts();
   }, []);
@@ -99,6 +112,7 @@ export default function FeedPage({loggedUser, handleLogout}) {
 			addLike={addLike}
 			removeLike={removeLike}
 			loggedUser={loggedUser}
+      removePost={removePost}
           />
         </Grid.Column>
       </Grid.Row>

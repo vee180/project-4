@@ -91,7 +91,7 @@ import {
       <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
         <Grid.Column style={{ maxWidth: 450 }}>
             <Header as="h2" color="yellow" textAlign="center">
-            <Image src="https://i.imgur.com/lsoKLs7.png" /> Sign Up
+            <Image src="https://i.imgur.com/6K3YjpH.png" /> Sign Up
           </Header>
           <Form autoComplete="off" onSubmit={handleSubmit}>
             <Segment stacked>
@@ -130,7 +130,7 @@ import {
                 label="bio"
                 name="bio"
                 value={state.bio}
-                placeholder="Tell us more about your dogs..."
+                placeholder="Tell us more about your furniture..."
                 onChange={handleChange}
               />
               <Form.Field>
