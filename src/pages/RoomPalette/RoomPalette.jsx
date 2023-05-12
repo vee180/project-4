@@ -2,11 +2,11 @@ import PageHeader from "../../components/Header/Header";
 import React from 'react';
 
 
-export default function MainPage(){
+export default function RoomPalettePage({loggedUser,handleLogout}){
     return(<>
     <div> 
        
-  <PageHeader />
+  <PageHeader  loggedUser={loggedUser} handleLogout={handleLogout}/>
   <div>Room Palette</div>
  
   </div>

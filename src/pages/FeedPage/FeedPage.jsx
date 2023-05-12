@@ -9,7 +9,8 @@ import { Grid } from "semantic-ui-react";
 // this will import all the functions from postApi, and attach to an object call postsApi
 import * as postsApi from "../../utils/postApi";
 import * as likesApi from '../../utils/likesApi';
-
+import * as reviewsApi from '../../utils/reviewsApi';
+import * as bookmarksApi from '../../utils/bookmarksApi';
 
 import tokenService from "../../utils/tokenService";
 export default function FeedPage({loggedUser, handleLogout}) {
@@ -79,8 +80,58 @@ export default function FeedPage({loggedUser, handleLogout}) {
     }
   }
 
-
-
+  async function addReview(review,postId){
+    
+    try {
+      const data = await reviewsApi.createReview(review,postId);
+      
+      getPosts()
+  
+  
+    } catch(err){
+      console.log(err, ' error in addReview')
+    }
+    }
+  
+    
+    async function removeReview(reviewId){
+    try {
+      
+      const data = await reviewsApi.removeReview(reviewId);
+      
+      getPosts()
+  
+    } catch(err){
+      console.log(err, ' err in remove review')
+    }
+    }
+  
+    async function addBookmark(postId){
+    
+      try {
+        const data = await bookmarksApi.create(postId);
+        
+        getPosts()
+    
+    
+      } catch(err){
+        console.log(err, ' error in addBookmark')
+      }
+      }
+    
+      
+      async function removeBookmark(bookmarkId){
+      try {
+        
+        const data = await bookmarksApi.removeBookmark(bookmarkId);
+        
+        getPosts()
+    
+      } catch(err){
+        console.log(err, ' err in remove bookmark')
+      }
+      }
+    
 
   useEffect(() => {
     getPosts();
@@ -103,7 +154,7 @@ export default function FeedPage({loggedUser, handleLogout}) {
       </Grid.Row>
       
       <Grid.Row>
-        <Grid.Column style={{ maxWidth: 450 }}>
+        <Grid.Column style={{ maxWidth: 550}}>
           <PostDisplay
             posts={posts}
             numPhotosCol={1}
@@ -113,6 +164,10 @@ export default function FeedPage({loggedUser, handleLogout}) {
 			removeLike={removeLike}
 			loggedUser={loggedUser}
       removePost={removePost}
+      addReview={addReview}
+      removeReview={removeReview}
+      addBookmark={addBookmark}
+      removeBookmark={removeBookmark}
           />
         </Grid.Column>
       </Grid.Row>

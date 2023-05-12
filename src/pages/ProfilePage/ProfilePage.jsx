@@ -13,6 +13,7 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage"
 // information
 import userService from "../../utils/userService";
 import * as likesApi from '../../utils/likesApi'
+import * as reviewsApi from '../../utils/reviewsApi'
 
 export default function ProfilePage({loggedUser, handleLogout}) {
   const [posts, setPosts] = useState([]);
@@ -80,6 +81,40 @@ export default function ProfilePage({loggedUser, handleLogout}) {
 	}
   }
 
+  
+  async function addReview(postId){
+    // postId will be passed in when we click on a heart in Card component!
+    try {
+      const data = await reviewsApi.create(postId);
+      
+      getProfile()
+  
+  
+    } catch(err){
+      console.log(err, ' error in addReview')
+    }
+    }
+  
+    
+    async function removeReview(reviewId){
+    try {
+      
+      const data = await reviewsApi.removeReview(reviewId);
+     
+      getProfile()
+  
+    } catch(err){
+      console.log(err, ' err in remove review')
+    }
+    }
+
+
+
+
+
+
+
+
   // if anything went wrong with userService.getProfile(username)
   // show this UI
   if (error) {
@@ -121,6 +156,8 @@ export default function ProfilePage({loggedUser, handleLogout}) {
 			loggedUser={loggedUser}
 			addLike={addLike}
 			removeLike={removeLike}
+      addReview={addReview}
+      removeReview={removeReview}
 			/>
         </Grid.Column>
       </Grid.Row>

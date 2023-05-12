@@ -16,9 +16,8 @@ function PageHeader({ loggedUser, handleLogout }) {
   return (
     <Segment clearing className="segment" style={{backgroundColor:"rgb(250,229,233)"}}>
       <Header as="h2" floated="right">
-        <Link to="/">
-          
-        </Link>
+      <Link to="/"></Link>
+        
        
         {/* <Link to="" onClick={handleLogout}>
           Logout
