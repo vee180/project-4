@@ -49,50 +49,51 @@ export default function LoginPage(props) {
   }
 
   return (
-    <Grid
-      textAlign="center"
-      style={{ height: "100vh", width: "100vw",backgroundImage:'url("https://i.imgur.com/6juaC6Y.png")'}}
-      verticalAlign="middle"
-    >
-      <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2"  textAlign="center" style={{color: 'brown'}}>
-          <Image src="https://i.imgur.com/6K3YjpH.png" /> Log-in to your account
-        </Header>
-        <Form onSubmit={handleSubmit}>
-          <Segment stacked>
-            <Form.Input
-              type="email"
-              name="email"
-              placeholder="email"
-              value={state.email}
-              onChange={handleChange}
-              required
-            />
-            <Form.Input
-              name="password"
-              type="password"
-              placeholder="password"
-              value={state.password}
-              onChange={handleChange}
-              required
-            />
-            <Button
-              color="brown"
-              fluid
-              size="large"
-              type="submit"
-              className="btn"
-            >
-              Login
-            </Button>
-          </Segment>
-        </Form>
-        <Message>
-          New to us? <Link to="/signup">Sign Up</Link>
-        </Message>
-        {error ? <ErrorMessage error={error} /> : null}
-      </Grid.Column>
-    </Grid>
+  
+<Grid
+  textAlign="center"
+  style={{ height: "100vh", margin: '0 auto'}}
+  verticalAlign="middle"
+>
+
+  <Grid.Column style={{ maxWidth: 600 }}>
+    
+    <Form onSubmit={handleSubmit}>
+    <Image src="https://i.imgur.com/h0tjlrG.png" style={{width: '400', justifyContent:'center', margin: '0 auto'}}/>
+      <Segment stacked>
+        <Form.Input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={state.email}
+          onChange={handleChange}
+          required 
+        />
+        <Form.Input
+          name="password"
+          type="password"
+          placeholder="Password"
+          value={state.password}
+          onChange={handleChange}
+          required
+        />
+        <Button
+          color="white"
+          fluid
+          size="large"
+          type="submit"
+          className="btn"
+        >
+          Login
+        </Button>
+      </Segment>
+    </Form>
+    <Message>
+      New to us? <Link to="/signup">Sign Up</Link>
+    </Message>
+    {error ? <ErrorMessage error={error} /> : null}
+  </Grid.Column>
+</Grid>
   );
 }
 

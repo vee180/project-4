@@ -11,7 +11,7 @@ import {
   import { useState } from "react";
   import userService from "../../utils/userService";
   import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
-  import SignupPage from '../../pages/SignupPage/SignupPage.css'
+  import './SignupPage.css'
   
   // this is a hook that allows us to programatically navigate to a different route
   import { useNavigate } from "react-router-dom";
@@ -88,13 +88,14 @@ import {
     }
   
     return (
-      <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
-        <Grid.Column style={{ maxWidth: 450 }}>
-            <Header as="h2" color="yellow" textAlign="center">
-            <Image src="https://i.imgur.com/6K3YjpH.png" /> Sign Up
-          </Header>
-          <Form autoComplete="off" onSubmit={handleSubmit}>
-            <Segment stacked>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <Grid textAlign="center" style={{ height: "100vh" , textAlign: 'center'}} verticalAlign="middle" className="grid">
+        <Grid.Column style={{ }}>
+            
+            <Image src="https://i.imgur.com/UdPXQWu.png" style={{width: '600px', margin: '0 auto', justifyContent:'center'}} /> 
+          
+          <Form autoComplete="off" onSubmit={handleSubmit} style={{textAlign:'center',justifyContent: 'center',margin: 'auto'}} className='form'>
+            <Segment stacked style={{textAlign:'center',justifyContent: 'center',margin: 'auto'}} className="segment">
               <Form.Input
                 name="username"
                 placeholder="username"
@@ -141,7 +142,7 @@ import {
                   onChange={handleFileInput}
                 />
               </Form.Field>
-              <Button type="submit" className="btn">
+              <Button type="submit" className="btn" style={{width: '400px'}}>
                 Signup
               </Button>
             </Segment>
@@ -149,6 +150,9 @@ import {
           </Form>
         </Grid.Column>
       </Grid>
+      
+      </div>
+      
     );
   }
   

@@ -10,7 +10,7 @@ import { Grid } from "semantic-ui-react";
 import * as postsApi from "../../utils/postApi";
 import * as likesApi from '../../utils/likesApi';
 import * as reviewsApi from '../../utils/reviewsApi';
-import * as bookmarksApi from '../../utils/bookmarksApi';
+
 
 import tokenService from "../../utils/tokenService";
 export default function FeedPage({loggedUser, handleLogout}) {
@@ -106,31 +106,7 @@ export default function FeedPage({loggedUser, handleLogout}) {
     }
     }
   
-    async function addBookmark(postId){
     
-      try {
-        const data = await bookmarksApi.create(postId);
-        
-        getPosts()
-    
-    
-      } catch(err){
-        console.log(err, ' error in addBookmark')
-      }
-      }
-    
-      
-      async function removeBookmark(bookmarkId){
-      try {
-        
-        const data = await bookmarksApi.removeBookmark(bookmarkId);
-        
-        getPosts()
-    
-      } catch(err){
-        console.log(err, ' err in remove bookmark')
-      }
-      }
     
 
   useEffect(() => {
@@ -154,10 +130,10 @@ export default function FeedPage({loggedUser, handleLogout}) {
       </Grid.Row>
       
       <Grid.Row>
-        <Grid.Column style={{ maxWidth: 550}}>
+        <Grid.Column style={{ maxWidth: 900}}>
           <PostDisplay
             posts={posts}
-            numPhotosCol={1}
+            numPhotosCol={2}
             isProfile={false}
             loading={loading}
 			addLike={addLike}
@@ -166,8 +142,7 @@ export default function FeedPage({loggedUser, handleLogout}) {
       removePost={removePost}
       addReview={addReview}
       removeReview={removeReview}
-      addBookmark={addBookmark}
-      removeBookmark={removeBookmark}
+      
           />
         </Grid.Column>
       </Grid.Row>

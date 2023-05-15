@@ -14,6 +14,7 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 
 import userService from "./utils/userService";
+
 // ============================================
 // Any Component rendered by a Route component will go in the pages folder
 // the pages components will use the components in the "components folder"
@@ -54,6 +55,7 @@ function App() {
           path="/addfurniture"
           element={<AddFurniture loggedUser={user} handleLogout={handleLogout} />}
         />
+        
         <Route
           path="/roompalette"
           element={<RoomPalette loggedUser={user} handleLogout={handleLogout} />}

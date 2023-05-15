@@ -11,10 +11,7 @@ const reviewsSchema = mongoose.Schema({
   rating: { type: Number, min: 1, max: 5, default: 5 },
   text: String,
 });
-const bookmarksSchema = mongoose.Schema({
-  username: String,
-  userId: { type: mongoose.Schema.Types.ObjectId },
-});
+
 
 const postSchema = new mongoose.Schema({
   // One User has many Posts, Post belongs to a User
@@ -24,8 +21,9 @@ const postSchema = new mongoose.Schema({
 
   // One Post has many likes, like belongs to a POST
   likes: [likesSchema],
+  //One Post has many reviews, review belongs to a Post
   reviews: [reviewsSchema],
-  bookmarks: [bookmarksSchema],
+  
 });
 
 module.exports = mongoose.model("Post", postSchema);

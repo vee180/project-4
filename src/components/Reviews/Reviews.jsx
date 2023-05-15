@@ -20,10 +20,10 @@ setState(!state)
 
 
   return (
-    <div>
+    <div style={{textAlign: 'center', justifyContent: 'center', fontSize: '20px'}}>
     <Checkbox
       defaultChecked
-      label='Collapse comments'
+      label='Collapse reviews'
       onChange={handleCheckbox}
     />
 
@@ -47,8 +47,9 @@ setState(!state)
         </Comment.Group>
       
     
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} style={{width: '2000px'}}>
         <Form.Group>
+        
       <Form.Field
         control={TextArea}
         name="body"
@@ -56,14 +57,9 @@ setState(!state)
         placeholder="Write your review here"
         onChange={handleInputChange}
         value={review.body || ''}
+        style={{ minHeight: 100, width: "400px", fontSize: '20px' }}
       />
-<Form.Field  control='select' name="rating" onChange={handleInputChange} >
-        <option value={1}>1</option>
-        <option value={2}>2</option>
-        <option value={3}>3</option>
-        <option value={4}>4</option>
-        <option value={5}>5</option>
-      </Form.Field>
+
       </Form.Group>
 
 
@@ -71,7 +67,8 @@ setState(!state)
         control={Button}
         type="submit"
         content="Submit"
-        color="blue"
+        color="white"
+        style={{width: '400px', height: '50px'}}
       />
     </Form>
   </div>

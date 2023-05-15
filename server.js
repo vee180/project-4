@@ -25,7 +25,6 @@ app.use("/api/users", require("./routes/api/users"));
 app.use("/api/posts", require("./routes/api/posts"));
 app.use("/api", require("./routes/api/likes"));
 app.use("/api", require("./routes/api/reviews"));
-app.use("/api", require("./routes/api/bookmarks"));
 
 const manifest = require("./dist/manifest.json");
 console.log(manifest);

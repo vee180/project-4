@@ -2,10 +2,10 @@ import { Card, Icon, Image, Label, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import 'semantic-ui-css/semantic.min.css';
 import Reviews from '../Reviews/Reviews';
-import Bookmarks from '../Bookmarks/Bookmarks';
 
 
-function PostCard({ post, isProfile, removeLike, addLike, loggedUser,removePost, addReview, removeReview, addBookmark, removeBookmark }) {
+
+function PostCard({ post, isProfile, removeLike, addLike, loggedUser,removePost, addReview, removeReview }) {
   console.log(loggedUser);
   // is the loggedUser username in the the post.likes array
   // if it is, that means the user has liked the Post
@@ -62,14 +62,14 @@ function PostCard({ post, isProfile, removeLike, addLike, loggedUser,removePost,
                     : "https://react.semantic-ui.com/images/wireframe/square-image.png"
                 }
               />
-              {post.user.username}
+              {post?.user.username}
             </Link>
           </Card.Header>
         </Card.Content>
       )}
       <Image src={`${post?.photoUrl}`} wrapped ui={false} />
       <Card.Content>
-        <Card.Description>{post.caption}</Card.Description>
+        <Card.Description style={{fontSize: '18px', color: ''}}>{post.caption}</Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={"right"}>
         <Icon
@@ -77,28 +77,26 @@ function PostCard({ post, isProfile, removeLike, addLike, loggedUser,removePost,
           size="large"
           color={likeColor}
           onClick={clickHandler}
+          style={{float: 'left', justifyContent: 'left'}}
         />
-        {post.likes.length} Likes
-        <Card.Content>
-          <Button onClick={() => {
-            removePost(post._id)
-            navigate('/feed')
-            }}>Delete Card</Button>
-        </Card.Content>
+        <span style={{ marginLeft: "0.5rem", float: 'left', justifyContent: 'left'}}>{post.likes.length} Likes</span>
+        
         
        
 
-      <Card.Content extra>
-        <Bookmarks addBookmark={addBookmark} removeBookmark={removeBookmark} post={post}/>
-      </Card.Content>
-
+      
         
 
-      <Card.Content extra>
+      <Card.Content extra style={{marginTop: '40px'}}>
         <Reviews addReview={addReview} removeReview={removeReview} post={post}/>
       </Card.Content>
     
-
+      <Card.Content style={{alignItems: 'center',margin: ' 0 auto',justifyContent: 'center'}}>
+          <Button  style={{  backgroundColor: '#FF5733',alignItems: 'center',margin: ' 0 auto', justifyContent: 'center',marginTop: '20px', width:'400px', height: '40px',float: 'center', alignItems: 'center', alignContent: 'center',alignItems: 'center'}} onClick={() => {
+            removePost(post._id)
+            navigate('/feed')
+            }}>Delete Post</Button>
+        </Card.Content>
     
       </Card.Content>
       

@@ -8,6 +8,7 @@ import './ProfileBio.css'
 
 export default function ProfileBio({ user }) {
   return (
+    <div style={{textAlign: 'center', justifyContent: 'center', margin: '0 auto'}}>
     <Grid textAlign="center" columns={2}>
       <Grid.Row>
         <Grid.Column>
@@ -21,15 +22,16 @@ export default function ProfileBio({ user }) {
             size="small"
           />
         </Grid.Column>
-        <Grid.Column textAlign="left" style={{ maxWidth: 450 }}>
+        <Grid.Column textAlign="left" style={{ maxWidth: 850 }}>
           <Segment vertical>
             <h3>{user.username}</h3>
           </Segment>
           <Segment>
-            <span className="profile-bio-span"> Bio: {user.bio}</span>
+            <span className="profile-bio-span"> About: {user.bio}</span>
           </Segment>
         </Grid.Column>
       </Grid.Row>
     </Grid>
+    </div>
   );
 }

@@ -13,8 +13,8 @@ async function create(req, res) {
       userId: req.user._id,
       rating: Number(req.body.rating),
       text: req.body.body,
-    }); //mutating a document
-    await post.save(); // save it
+    }); 
+    await post.save(); 
     res.status(201).json({ data: "review added" });
   } catch (err) {
     res.status(400).json({ err });

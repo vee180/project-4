@@ -33,6 +33,7 @@ export default function AddPage({loggedUser,handleLogout}){
     <>
       <Header loggedUser={loggedUser} handleLogout={handleLogout}  />
       <AddFurniture handleAddPost={handleAddPost}/>
+      <div className="pictures"></div>
     </>
   )
 }

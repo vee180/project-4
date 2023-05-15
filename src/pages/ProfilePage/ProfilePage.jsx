@@ -136,6 +136,7 @@ export default function ProfilePage({loggedUser, handleLogout}) {
   }
 
   return (
+    <div style={{textAlign:'center', justifyContent: 'center'}}>
     <Grid>
       <Grid.Row>
         <Grid.Column>
@@ -148,7 +149,7 @@ export default function ProfilePage({loggedUser, handleLogout}) {
         </Grid.Column>
       </Grid.Row>
       <Grid.Row centered>
-        <Grid.Column style={{ maxWidth: 750 }}>
+        <Grid.Column style={{ maxWidth: 2050 }}>
 		<PostDisplay
             posts={posts}
             numPhotosCol={3}
@@ -162,5 +163,6 @@ export default function ProfilePage({loggedUser, handleLogout}) {
         </Grid.Column>
       </Grid.Row>
     </Grid>
+    </div>
   );
 }

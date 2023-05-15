@@ -13,9 +13,7 @@ export default function PostDisplay({
   loggedUser,
   removePost,
   addReview,
-  removeReview,
-  addBookmark,
-  removeBookmark
+  removeReview
 }) {
   if (loading) {
     return (
@@ -30,7 +28,7 @@ export default function PostDisplay({
           {posts.map((post) => {
             return (
               <PostCard post={post} key={post._id} isProfile={isProfile} addLike={addLike} removeLike={removeLike} loggedUser={loggedUser} removePost={removePost} addReview={addReview}
-              removeReview={removeReview} addBookmark={addBookmark} removeBookmark={removeBookmark}/>
+              removeReview={removeReview} />
             );
           })}
         </Card.Group>
@@ -41,7 +39,7 @@ export default function PostDisplay({
   return (
     <Card.Group itemsPerRow={numPhotosCol} stackable>
       {posts.map((post) => {
-        return <PostCard post={post} key={post._id} isProfile={isProfile} addLike={addLike} removeLike={removeLike} loggedUser={loggedUser} removePost={removePost} addReview={addReview}  removeReview={removeReview} addBookmark={addBookmark} removeBookmark={removeBookmark}/>;
+        return <PostCard post={post} key={post._id} isProfile={isProfile} addLike={addLike} removeLike={removeLike} loggedUser={loggedUser} removePost={removePost} addReview={addReview}  removeReview={removeReview} />;
       })}
     </Card.Group>
   );
