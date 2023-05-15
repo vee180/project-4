@@ -13,7 +13,7 @@ To fully utilize our RoomMuse app and view other users' furniture posts, you nee
 MongoDB
 / Express /
 React
-/ Node.js /
+/ Node.js
 
 ## Future Enhancements
 
