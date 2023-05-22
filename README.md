@@ -14,7 +14,7 @@ MongoDB
 / Express /
 React
 / Node.js
-Semantic UI
+/ Semantic UI
 
 ## Future Enhancements
 
